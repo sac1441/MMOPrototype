@@ -6,21 +6,8 @@ A server-authoritative multiplayer prototype built in **Unity 2022.3 LTS** using
 
 ---
 
-## 🏗 Architecture
-
-\\\
-Client                              Server
-──────                              ──────
-GatherInput()
-    │
-    ▼
-SimulateLocally()  ──ServerRpc──▶  ValidateInput()
-(client prediction)                 AuthoritativeSimulate()
-    │                                   │
-stateBuffer[]      ◀──ClientRpc──  BroadcastState()
-    │
-Reconcile() — correct mispredictions silently
-\\\
+## 📋 Project Documentation
+[View full project notes on Notion](https://app.notion.com/p/3837db0e411981bdafe9f8efc75e5e74)
 
 ### Why server-authoritative?
 In a real MMO, clients are never trusted. The server owns all game state — positions, health, combat results. Clients predict locally to feel responsive, but the server always wins. This prevents cheating and keeps all clients in sync.
