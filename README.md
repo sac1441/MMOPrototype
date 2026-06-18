@@ -6,8 +6,10 @@ A server-authoritative multiplayer prototype built in **Unity 2022.3 LTS** using
 
 ---
 
+
 ## 📋 Project Documentation
 [View full project notes on Notion](https://app.notion.com/p/3837db0e411981bdafe9f8efc75e5e74)
+
 
 ### Why server-authoritative?
 In a real MMO, clients are never trusted. The server owns all game state — positions, health, combat results. Clients predict locally to feel responsive, but the server always wins. This prevents cheating and keeps all clients in sync.
@@ -34,25 +36,7 @@ In a real MMO, clients are never trusted. The server owns all game state — pos
 
 ---
 
-## 📁 Project Structure
 
-\\\
-Assets/
-├── Scripts/
-│   ├── Network/
-│   │   ├── MMONetworkManager.cs   — Bootstrap: host/client startup, transport config
-│   │   └── PlayerSpawner.cs       — Spawns/despawns players on connect/disconnect
-│   ├── Player/
-│   │   └── PlayerController.cs    — WASD input, client prediction, reconciliation
-│   ├── Stats/
-│   │   └── PlayerStats.cs         — NetworkVariables for HP, MP, Level
-│   └── Combat/
-│       └── CombatSystem.cs        — ServerRpc attack validation, damage, death, respawn
-├── Prefabs/
-│   └── Player.prefab              — NetworkObject + NetworkTransform + all scripts
-└── Scenes/
-    └── GameScene.unity            — Ground plane, NetworkManager, lighting
-\\\
 
 ---
 
